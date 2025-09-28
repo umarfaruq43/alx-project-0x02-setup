@@ -1,7 +1,7 @@
 import Header from "@/components/layout/Header";
 import React from "react";
 
-const PostsPage = () => {
+const Posts = () => {
     return (
         <div>
             <Header />
@@ -15,4 +15,4 @@ const PostsPage = () => {
     );
 };
 
-export default PostsPage;
+export default Posts;
