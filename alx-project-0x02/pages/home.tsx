@@ -1,5 +1,6 @@
 import Card from "@/components/common/Card";
 import PostModal from "@/components/common/PostModal";
+import Header from "@/components/layout/Header";
 import { useState } from "react";
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
 
     return (
         <div className="p-6 space-y-6">
+            <Header />
             <h1 className="text-3xl font-bold mb-6">
                 Welcome to the Home Page
             </h1>
