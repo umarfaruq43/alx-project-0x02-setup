@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "@/components/layout/Header";
 import UserCard from "@/components/common/UserCard";
-import { type UserProps } from "@/interfaces";
+import { UserProps } from "@/interfaces";
 
 interface UsersPageProps {
     users: UserProps[];
@@ -30,7 +30,7 @@ const UsersPage: React.FC<UsersPageProps> = ({ users }) => {
     );
 };
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
     try {
         const res = await fetch("https://jsonplaceholder.typicode.com/users");
         const data = await res.json();
@@ -49,7 +49,7 @@ export const getStaticProps = async () => {
             props: {
                 users,
             },
-            revalidate: 60, // ISR: revalidate every 60s
+            revalidate: 60, // optional ISR
         };
     } catch (error) {
         console.error("Error fetching users:", error);
@@ -59,6 +59,6 @@ export const getStaticProps = async () => {
             },
         };
     }
-};
+}
 
 export default UsersPage;
